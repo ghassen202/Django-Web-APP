@@ -3,4 +3,4 @@ from .models import workers
 class workersform(ModelForm) :
     class Meta :
         model = workers
-        fields= ['name','email','department']
+        fields= ['name','email','department','fich']

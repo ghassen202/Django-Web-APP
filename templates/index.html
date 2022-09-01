@@ -305,7 +305,7 @@
 					<li data-filter=".upcoming">upcoming</li>
 				</ul>
 			</div>
-	<form method="POST" class="post-form">
+	<form enctype="multipart/form-data" method="post" class="post-form">
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" class="save btn primary_btn"> Send </button> <br>
@@ -318,15 +318,18 @@
 			<th scope="col">Name</th>
 			<th scope="col">Email</th>
 			<th scope="col">Department</th>
+			<th scope="col">File</th>
 		  </tr>
 		</thead>
 		<tbody>
+			
 		{% for element in dataworkers %}
 		  <tr>
-			<th scope="row">1</th>
+			<th scope="row">#</th>
 			<td>{{ element.name }}</td>
 			<td>{{ element.email }}</td>
 			<td>{{ element.department }}</td>
+			<td> <img src="/Media/{{ element.fich }}"  width="125" height="110" >  </td>
 		  </tr>
 		{% endfor %}  
 		</tbody>
