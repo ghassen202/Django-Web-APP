@@ -6,7 +6,7 @@ class workers(models.Model) :
     name=models.CharField(max_length=25)
     email=models.EmailField(max_length=50)
     department=models.CharField(max_length=30)
-    fich=models.FileField(upload_to='photos ')
+    fich=models.FileField(upload_to='photos')
 class workersadmin(admin.ModelAdmin) :
     list_display =['name','email','department','fich']
     list_filter =('department',)
