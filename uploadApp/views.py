@@ -24,7 +24,7 @@ def index(request) :
       ftp.login(ftpUname,ftpPass)
 
       ftp.cwd("folder1/abcd")
-
+########################################################################################################
       localFilePath = "C:/Users/user/Desktop/stage/Media/photos/"+ str(form['fich'].value())
       with open(localFilePath,'rb') as file :
           action = ftp.storbinary(f"STOR {str(form['fich'].value())}",file,blocksize=1024)
@@ -33,6 +33,7 @@ def index(request) :
       return HttpResponseRedirect('/uploadApp/')  
   else :
     form= workersform()
+#############################################################################################################
   #template=loader.get_template('index.html')
   #data = {'employees':['Ghassen','Elyes','Khalil'] }
 
